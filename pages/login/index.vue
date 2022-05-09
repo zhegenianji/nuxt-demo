@@ -8,48 +8,25 @@
             {{ isLogin ? 'Sign in ' : 'Sign up' }}
           </h1>
           <p class="text-xs-center">
-            <nuxt-link
-              v-if="isLogin"
-              to="register"
-            >Need an account?</nuxt-link>
-            <nuxt-link
-              v-else
-              to="login"
-            >Have an account?</nuxt-link>
+            <nuxt-link v-if="isLogin" to="register">Need an account?</nuxt-link>
+            <nuxt-link v-else to="login">Have an account?</nuxt-link>
 
           </p>
 
           <ul class="error-messages">
-            <li>{{errors}}</li>
+            <li>{{ errors }}</li>
           </ul>
 
           <form @submit.prevent="onSubmit">
-            <fieldset
-              class="form-group"
-              v-if="!isLogin"
-            >
-              <input
-                v-model="user.username"
-                class="form-control form-control-lg"
-                type="text"
-                placeholder="Your Name"
-              >
+            <fieldset class="form-group" v-if="!isLogin">
+              <input v-model="user.username" class="form-control form-control-lg" type="text" placeholder="Your Name">
             </fieldset>
             <fieldset class="form-group">
-              <input
-                v-model="user.email"
-                class="form-control form-control-lg"
-                type="text"
-                placeholder="Email"
-              >
+              <input v-model="user.email" class="form-control form-control-lg" type="text" placeholder="Email">
             </fieldset>
             <fieldset class="form-group">
-              <input
-                v-model="user.password"
-                class="form-control form-control-lg"
-                type="password"
-                placeholder="Password"
-              >
+              <input v-model="user.password" class="form-control form-control-lg" type="password"
+                placeholder="Password">
             </fieldset>
             <button class="btn btn-lg btn-primary pull-xs-right">
               {{ isLogin ? 'Sign in ' : 'Sign up' }}
@@ -63,7 +40,7 @@
 </template>
 
 <script >
-import { login,register } from '@/api/user'
+import { login, register } from '@/api/user'
 const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   middleware: 'notAuth',
@@ -75,7 +52,7 @@ export default {
   },
   data () {
     return {
-      errors:'',
+      errors: '',
       user: {
         username: null,
         email: null,
@@ -84,11 +61,11 @@ export default {
     }
   },
   methods: {
-     async onSubmit () {
+    async onSubmit () {
       try {
         const { data } = this.isLogin
-        ? await login({user:this.user})
-        : await register({user:this.user})
+          ? await login({ user: this.user })
+          : await register({ user: this.user })
         this.$store.commit('setUser', data.user)
         Cookie.set('user', JSON.stringify(data.user))
         this.$router.push('/')
