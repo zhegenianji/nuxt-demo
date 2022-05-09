@@ -1,0 +1,52 @@
+[
+  {
+    "name": "layout",
+    "path": "/",
+    "component": "E:\\\\FZM\\\\nuxt-demo\\\\pages\\\\layout",
+    "children": [
+      {
+        "name": "home",
+        "path": "",
+        "component": "E:\\\\FZM\\\\nuxt-demo\\\\pages\\\\home",
+        "_name": "_ab813fb8"
+      },
+      {
+        "name": "login",
+        "path": "/login",
+        "component": "E:\\\\FZM\\\\nuxt-demo\\\\pages\\\\login",
+        "_name": "_c4362678"
+      },
+      {
+        "name": "register",
+        "path": "/register",
+        "component": "E:\\\\FZM\\\\nuxt-demo\\\\pages\\\\login",
+        "_name": "_c4362678"
+      },
+      {
+        "name": "profile",
+        "path": "/profile/:username",
+        "component": "E:\\\\FZM\\\\nuxt-demo\\\\pages\\\\profile",
+        "_name": "_dcf8c778"
+      },
+      {
+        "name": "settings",
+        "path": "/settings",
+        "component": "E:\\\\FZM\\\\nuxt-demo\\\\pages\\\\settings",
+        "_name": "_302ffce8"
+      },
+      {
+        "name": "editor",
+        "path": "/editor",
+        "component": "E:\\\\FZM\\\\nuxt-demo\\\\pages\\\\editor",
+        "_name": "_122ccf72"
+      },
+      {
+        "name": "article",
+        "path": "/article/:slug",
+        "component": "E:\\\\FZM\\\\nuxt-demo\\\\pages\\\\article",
+        "_name": "_784ddf91"
+      }
+    ],
+    "_name": "_1dfba92f"
+  }
+]
