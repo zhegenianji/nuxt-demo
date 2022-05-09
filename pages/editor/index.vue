@@ -39,7 +39,7 @@
 <script >
 export default {
   middleware: 'auth',
-  name: 'hmePage',
+  name: 'hmePage'
 
 }
 </script>

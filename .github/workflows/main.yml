@@ -3,7 +3,6 @@ on:
   push:
     tags:
       - 'v*'
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -12,7 +11,6 @@ jobs:
     # 下载源码
     - name: Checkout
       uses: actions/checkout@master
-
     # 打包构建
     - name: Build
       uses: actions/setup-node@master
@@ -31,7 +29,6 @@ jobs:
         release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
-
     # 上传构建结果到 Release
     - name: Upload Release Asset
       id: upload-release-asset
@@ -54,7 +51,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd /root/realworld-nuxtjs
-          wget https://github.com/lipengzhou/realworld-nuxtjs/releases/latest/download/release.tgz -O release.tgz
+          wget https://github.com/zhegenianji/nuxt-demo/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
           npm install --production
           pm2 reload pm2.config.json
