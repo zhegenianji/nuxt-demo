@@ -50,8 +50,8 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /root/realworld-nuxtjs
-          wget https://github.com/zhegenianji/nuxt-demo/releases/tag/v0.1.4/release.tgz -O release.tgz
+          cd /root/next-demo
+          wget https://github.com/zhegenianji/nuxt-demo/releases/tag/v0.1.6/release.tgz -O release.tgz
           tar zxvf release.tgz
           npm install --production
           pm2 reload pm2.config.json
